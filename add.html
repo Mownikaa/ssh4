@@ -1,105 +1,61 @@
-<!DOCType html>
-    <head>
-	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-$(document).ready(function() {
-    var max_fields = 10;
-    var wrapper = $(".container1");
-    var add_button = $(".add_form_field");
-
-    var x = 1;
-    $(add_button).click(function(e) {
-        e.preventDefault();
-        if (x < max_fields) {
-            x++;
-            $(wrapper).append('<div><input id="name" type="text" placeholder="Title..." /><a href="#" class="x">x</a></div>'); //add input box
-        } else {
-            alert('You Reached the limits')
-        }
-    });
-
-    $(wrapper).on("click", ".x", function(e) {
-        e.preventDefault();
-        $(this).parent('div').remove();
-        x--;
-    })
-});
-</script>
-<style>
-body{
-	margin:0;
-}
-*{
-   border:none;
-}
-.clearit{
-	clear:both;
-}
-form.contactUs {
- padding:0;
- width:30%;
- height:100%;
- margin:0 auto;
- border:1px solid #dedede;
- position:relative;
- bottom:0;
- left:0;
- background:#fff;
- text-align:center;
-}
-form.contactUs ul, form.contactUs label {
- padding:0;
- list-style:none;
- color:#666;
-}
-form.contactUs ul li {
- margin:5px;
- border:1px solid #dedede;
-}
-form.contactUs ul li:nth-child(odd){
- width:60%;
- float:left;
-}
-form.contactUs ul li:nth-child(even){
- width:20%;
- float:left;
-}
-.navbar {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: sticky;
-        top: 0;
-        cursor: pointer;
-    }
- 
-    .background {
-        background: grey;
-        background-blend-mode: darken;
-        background-size: cover;
-    }
-	</style>
+<!DOCTYPE html>
+<head>
+     <title>website</title>
+	 <link rel="stylesheet" type="text/css" href="page1.css"/>
 </head>
 <body>
+   <form action="" class="contactUs">
+   <h3 class="txtCenter"><strong>ContactUs</strong></h3>
+    <p>Please complete the form below. Mandatory fields marked<span>*</span></p>
+     <ul>
+     <li>
+     <label for="name">name</label>
+     <span>*</span>
+     </li>
+     <li>
+      <input id="name" type="text" placeholder="Enter Your Name" />
+     </li>
+     <li>
+      <label for="address">Address</label>
+      <span>*</span>
+     </li>
+     <li>
+      <input id="address" type="text" placeholder="Enter Your Address"/>
+     </li>
+     <li>
+      <label for="city">Town/City</label>
+      <span>*</span>
+     </li>
+     <li>
+     <input id="city" type="text" placeholder="Enter Your Town/City Name" />
+     </li>
+     <li>
+      <label for="country">Country</label>
+      <span>*</span>
+     </li>
+     <li>
+      <input id="country" type="text" placeholder="Enter Your Country" />
+     </li>
+     <li>
+      <label for="postcode">Postcode</label>
+      <span>*</span>
+     </li>
+     <li>
+     <input id="postcode" type="number" placeholder="Enter Your Name" />
+     </li>
+    </ul>
+    <div class="clearIt"></div>
+    <p>Is this address also your invoice address?<span>*</span></p>
+    <input type="radio" name="invoice" value="yes" id="yes" />
+    <label for="yes">Yes</label><br/>
+    <input type="radio" name="invoice" value="no" id="no"/>
+    <label for="no">No</label>
+    <div class="clearIt"></div>
+    <input type="button" value="submit" name="submit" />
+    <input type="reset" value="reset" name="reset" />
+   </form>
+   <!-- Contact Form End -->
+   <div class="clearIt"></div>
+   </body>
+  </html>
 
- <form action="" class="contactUs">
- <nav class="navbar background">
-<div class="container1">
-
-     <h3 <strong>Task Management</strong></h3> 
-	 <ul>
-	 <li>
-     <input id="name" type="text" placeholder="Title..." />
-    </li>
-	<li>
-     <button class="add_form_field">Add</button>
-	 </li>
-	 </ul>
-	 </nav>
-     <!-- <span style="font-size:16px; font-weight:bold;"> </span>-->
-
-   </div>
-</form>
-</body>
-</html>
